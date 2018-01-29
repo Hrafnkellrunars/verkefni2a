@@ -1,5 +1,5 @@
 from bottle import route, static_file, run, error
-
+import os
 
 @route('/')
 @route('/About')
@@ -78,4 +78,4 @@ def index():
 def error404(error):
     return "Error! Shit's Fooked mate"
 
-run(host='localhost', port=8080, debug=True)
+run(host='0.0.0.0', port=os.environ.get('PORT'))
